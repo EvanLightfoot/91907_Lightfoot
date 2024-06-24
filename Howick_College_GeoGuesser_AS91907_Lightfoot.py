@@ -41,25 +41,26 @@ root = Tk()
 root.resizable(False, False)
 root.state('zoomed')
 root.title("Howick College GeoGuesser V1.0")
-root.configure(background='cyan')
+root.configure(background='#FFFDD0')
 guess = StringVar()
-guess_text_box = Entry(root, textvariable=guess, width=34, font=("Calibiri", "11")).place(x=770, y=917)
-guess_text_box_label = Label(root, text="Location:", fg="black", bg="cyan",
-                                font=("Calibri", "15", "bold")).place(x=750, y=910)
-submit_btn = Button(root, text="Guess", borderwidth="5", width="13", bg='lime', fg='black',
-                         font=("Calibri", "15", "bold"),command=lambda:get_guess(self, root)).place(x=1050, y=900)
-reset_btn = Button(root, text="Reset", borderwidth="5", width="13", bg='lime', fg='black',
+guess_text_box = Entry(root, textvariable=guess, width=30, highlightbackground="black", highlightthickness="1", font=("Calibiri", "11")).place(x=830, y=917)
+guess_text_box_label = Label(root, text="Location:", fg="black", bg="#FFFDD0",
+                                font=("Calibri", "15", "bold")).place(x=748, y=910)
+guess_btn = Button(root, text="Guess", borderwidth="2", width="13", bg='lime', fg='black',
+                         font=("Calibri", "15", "bold"),command=lambda:get_guess(self, root)).place(x=1100, y=900)
+reset_btn = Button(root, text="Reset", borderwidth="2", width="13", bg='red', fg='black',
                          font=("Calibri", "15", "bold"),command=lambda:reset(self, root)).place(x=600, y=900)
-quit_btn = Button(root, text="Quit", borderwidth="5", width="13", bg='lime', fg='black',
+quit_btn = Button(root, text="Quit", borderwidth="2", width="13", bg='red', fg='black',
                          font=("Calibri", "15", "bold"),command=lambda:quit(root)).place(x=450, y=900)
-
-how_to_play_frame = Frame(root, bg='cyan', width=430, height=714, highlightbackground="black", highlightthickness=5).place(x=1480, y=173)
-how_to_play_title = Label(root, fg="darkblue", bg='cyan', text="How to play?", font=("Calibri", "20", "bold", "underline")).place(x=1490, y=178)
-how_to_play_text = Label(root, bg='cyan', text="- Type your guess in the text box 'location' undeneath the image.\n\n Ensure the use of correct grammer and clear guesses.\n\n- Gather as many points as possible and try and get your best time!", 
-                         font=("Calibri", "11", "bold")).place(x=1490, y=215)
-title = Label(root, text="Howick College GeoGuesser", bg='cyan', fg='darkblue',
-                         font=("Calibri", "30", "bold", "underline")).place(x=740, y=100)
-location = PhotoImage(file="location.png")
-location_label = Label(root, height=700, width=1000, image=location, bg='white', highlightbackground="black",
-                       highlightthickness=5).place(anchor='center', x=960, y=530)
+how_to_play_frame = Frame(root, bg='white', width=430, height=714, highlightbackground="black", highlightthickness=5).place(x=1480, y=173)
+how_to_play_title = Label(root, fg="darkblue", bg='white', text="How to play?", font=("Calibri", "20", "bold", "underline")).place(x=1490, y=178)
+how_to_play_text_l1 = Label(root, bg='white', text="- Type your guess in the text box 'location' undeneath the image.", font=("Calibri", "11", "bold")).place(x=1490, y=215)
+how_to_play_text_l2 = Label(root, bg='white', text="- Ensure that you use correct grammer and clear guesses.", font=("Calibri", "11", "bold")).place(x=1490, y=250)
+how_to_play_text_l3 = Label(root, bg='white', text="- Gather as many points as possible by guessing correctly!", font=("Calibri", "11", "bold")).place(x=1490, y=285)
+how_to_play_text_l4 = Label(root, bg='white', text="- Get your best time! by guessing faster and faster as you play!", font=("Calibri", "11", "bold")).place(x=1490, y=320)              
+title = Label(root, text="Howick College GeoGuesser", bg='#FFFDD0', fg='darkblue', font=("Calibri", "30", "bold", "underline")).place(x=740, y=100)
+location_img = PhotoImage(file="location.png")
+crest_img = PhotoImage(file="crest.png")
+crest_label = Label(root, height=175, width=200, image=crest_img, bg='white').place(x=1700, y=700)
+location_label = Label(root, height=700, width=1000, image=location_img, bg='white', highlightbackground="black", highlightthickness=5).place(anchor='center', x=960, y=530)
 root.mainloop()
